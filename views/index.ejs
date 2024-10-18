@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleHero.css">
+    <title>Superhero-pedia</title>
+</head>
+<body>
+    <h1>Superhero-pedia</h1>
+
+    <!-- Barra de búsqueda -->
+    <form action="/search" method="GET" class="search-form">
+        <input type="text" name="name" placeholder="Buscar un superhéroe..." required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    <% if (error) { %>
+        <p class="error-message"><%= error %></p>
+      <% } %>
+
+    <div class="hero-container">
+      <% superheroes.forEach(hero => { %>
+        <div class="hero-card">
+          <img src="<%= hero.images.md %>" alt="<%= hero.name %>">
+          <h2><%= hero.name %></h2>
+          <a href="/hero/<%= hero.id %>">Ver detalles</a> <!-- Enlace a la página de detalles del personaje -->
+        </div>
+      <% }) %>
+    </div>
+</body>
+</html>

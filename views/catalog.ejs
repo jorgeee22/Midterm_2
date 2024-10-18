@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleHome.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Superhero-pedia</title>
+</head>
+<body>
+    
+
+    <div class="container">
+        <h1 class="text-center my-4">CATALOG</h1>
+
+        <!-- Barra de búsqueda -->
+        <form action="/search" method="GET" class="form-inline justify-content-center mb-4">
+            <input type="text" name="name" class="form-control mr-2" placeholder="Buscar un superhéroe..." required>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+
+        <% if (error) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+
+        <div class="row">
+            <% superheroes.forEach(hero => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="<%= hero.images.md %>" alt="<%= hero.name %>" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= hero.name %></h5>
+                            <a href="/hero/<%= hero.id %>" class="btn btn-info">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
