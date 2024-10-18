@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <title><%= hero.name %> - Superhero Details</title>
 </head>
 <body>
-    <h1>Superhero Details</h1>
+    <h1><%= hero.name%></h1>
 
     <div class="hero-details">
         <!-- Imagen del personaje -->
@@ -16,10 +17,12 @@
         <!-- ID -->
         <p><strong>ID:</strong> <%= hero.id %></p>
         
-        <!-- Nombre y nombre completo -->
-        <h2><%= hero.name %></h2>
-        <p><strong>Full Name:</strong> <%= hero.biography.fullName %></p>
-        
+        <h3>Biography</h3>
+     <ul>
+        <li><strong>Full name:</strong> <%= hero.biography.fullName || 'Unknown' %></li>
+        <li><strong>Place of Birth:</strong> <%= hero.biography.placeOfBirth || 'Unknown' %></li>
+       <li><strong>Alias:</strong> <%= hero.biography.aliases.join(', ') || 'No aliases available.' %></li>
+     </ul>
         <!-- Estadísticas de poder -->
         <h3>Power Stats</h3>
         <ul>
@@ -31,15 +34,8 @@
             <li><strong>Combat:</strong> <%= hero.powerstats.combat %></li>
         </ul>
 
-        <!-- Lugar de nacimiento -->
-        <p><strong>Place of Birth:</strong> <%= hero.biography.placeOfBirth %></p>
 
-        <!-- Pequeña biografía -->
-        <p><strong>Biography:</strong> <%= hero.biography.fullName ? `Also known as ${hero.biography.fullName}` : 'No biography available.' %></p>
-
-        <!-- Alias -->
-        <p><strong>Aliases:</strong> <%= hero.biography.aliases.join(', ') || 'No aliases available.' %></p>
-
+        <h3>Physical Characteristics</h3>
         <!-- Género, raza, altura, peso -->
         <p><strong>Gender:</strong> <%= hero.appearance.gender %></p>
         <p><strong>Race:</strong> <%= hero.appearance.race || 'Unknown' %></p>
@@ -51,7 +47,8 @@
         <p><strong>Hair Color:</strong> <%= hero.appearance.hairColor || 'Unknown' %></p>
 
         <!-- Afiliación a un grupo -->
-        <p><strong>Group Affiliation:</strong> <%= hero.connections.groupAffiliation || 'None' %></p>
+        <h3>Group Afiliation</h3>
+        <p> <%= hero.connections.groupAffiliation || 'None' %></p>
     </div>
 
     <div class="navigation">

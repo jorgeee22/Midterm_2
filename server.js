@@ -5,12 +5,12 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
-const BASE_URL = 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api';
+const URL = 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api';
 
 // Ruta principal
 app.get('/catalog', async (req, res) => {
     try {
-        const response = await axios.get(`${BASE_URL}/all.json`);
+        const response = await axios.get(`${URL}/all.json`);
         const superheroes = response.data;
         res.render('catalog', { superheroes, error: null });
     } catch (error) {
@@ -21,7 +21,7 @@ app.get('/catalog', async (req, res) => {
 app.get('/search', async (req, res) => {
     const { name } = req.query;
     try {
-        const response = await axios.get(`${BASE_URL}/all.json`);
+        const response = await axios.get(`${URL}/all.json`);
         const heroes = response.data.filter(hero => hero.name.toLowerCase().includes(name.toLowerCase()));
         
         if (heroes.length > 0) {
@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
   let currentIndex = 0;
 app.get('/next', async (req, res) => {
   try {
-    const response = await axios.get(`${BASE_URL}/all.json`);
+    const response = await axios.get(`${URL}/all.json`);
     const heroes = response.data;
     currentIndex = (currentIndex + 1) % heroes.length;
     res.render('hero', { hero: heroes[currentIndex] });
@@ -52,7 +52,7 @@ app.get('/next', async (req, res) => {
 
 app.get('/previous', async (req, res) => {
   try {
-    const response = await axios.get(`${BASE_URL}/all.json`);
+    const response = await axios.get(`${URL}/all.json`);
     const heroes = response.data;
     currentIndex = (currentIndex - 1 + heroes.length) % heroes.length;
     res.render('hero', { hero: heroes[currentIndex] });
@@ -65,7 +65,7 @@ app.get('/previous', async (req, res) => {
 app.get('/hero/:id', async (req, res) => {
     const id = parseInt(req.params.id);
     try {
-        const response = await axios.get(`${BASE_URL}/all.json`);
+        const response = await axios.get(`${URL}/all.json`);
         const heroes = response.data;
 
         // Encuentra el superhéroe correspondiente al ID
