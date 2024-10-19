@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/styleHero.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-   crossorigin="anonymous">
-   
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styleHero.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+     crossorigin="anonymous">
+    <title><%= hero.name %> - Superhero Details</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-info">
+    <nav class="navbar navbar-expand-lg bg-info bangers-regular">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,16 +18,16 @@
           <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
             <ul class="navbar-nav">
               <li class="nav-item">
-
-              <a class="nav-link active catalog-link" href="/catalog">CATALOG</a>
+                <!-- Estilo personalizado para la palabra CATALOG -->
+                <a class="nav-link active catalog-link" href="/catalog">CATALOG</a>
               </li>
               <li class="nav-item mx-5">
-
+                <!-- Estilo personalizado para centrar SUPERHEROE-PEDIA -->
                 <a class="nav-link active site-title" href="/">S U P E R H E R O E - P E D I A</a>
               </li>
             </ul>
     
-
+            <!-- Barra de búsqueda -->
             <form action="/search" method="GET" class="d-flex justify-content-center mb-4">
               <input type="text" name="name" class="form-control me-2" placeholder="Search hero..." required>
               <button type="submit" class="btn btn-primary my-2">Go</button>
@@ -42,71 +37,45 @@
 
     <h1><%= hero.name%></h1>
 
-    <div class="hero-container">
-
+    <div class="hero-details">
+        <!-- Imagen del personaje -->
         <img src="<%= hero.images.md %>" alt="<%= hero.name %>" class="hero-image">
         
-
+        <!-- ID -->
         <p><strong>ID:</strong> <%= hero.id %></p>
+        
+        <h3>Biography</h3>
+     <ul>
+        <li><strong>Full name:</strong> <%= hero.biography.fullName || 'Unknown' %></li>
+        <li><strong>Place of Birth:</strong> <%= hero.biography.placeOfBirth || 'Unknown' %></li>
+       <li><strong>Alias:</strong> <%= hero.biography.aliases.join(', ') || 'No aliases available.' %></li>
+     </ul>
+        <!-- Estadísticas de poder -->
+        <h3>Power Stats</h3>
+        <ul>
+            <li><strong>Intelligence:</strong> <%= hero.powerstats.intelligence %></li>
+            <li><strong>Strength:</strong> <%= hero.powerstats.strength %></li>
+            <li><strong>Speed:</strong> <%= hero.powerstats.speed %></li>
+            <li><strong>Durability:</strong> <%= hero.powerstats.durability %></li>
+            <li><strong>Power:</strong> <%= hero.powerstats.power %></li>
+            <li><strong>Combat:</strong> <%= hero.powerstats.combat %></li>
+        </ul>
 
-    <div class="accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Biography
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong> <h2>Biography</h2></strong>
-              <ul>
-                 <li><strong>Full name:</strong> <%= hero.biography.fullName || 'Unknown' %></li>
-                 <li><strong>Place of Birth:</strong> <%= hero.biography.placeOfBirth || 'Unknown' %></li>
-                <li><strong>Alias:</strong> <%= hero.biography.aliases.join(', ') || 'No aliases available.' %></li>
-              </ul>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Power Stats
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong><h2>Power Stats</h2></strong>
-              <ul>
-                  <li><strong>Intelligence:</strong> <%= hero.powerstats.intelligence %></li>
-                  <li><strong>Strength:</strong> <%= hero.powerstats.strength %></li>
-                  <li><strong>Speed:</strong> <%= hero.powerstats.speed %></li>
-                  <li><strong>Durability:</strong> <%= hero.powerstats.durability %></li>
-                  <li><strong>Power:</strong> <%= hero.powerstats.power %></li>
-                  <li><strong>Combat:</strong> <%= hero.powerstats.combat %></li>
-              </ul>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            Physical Characteristics
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong> <h2>Physical Characteristics</h2></strong>
-              <p><strong>Gender:</strong> <%= hero.appearance.gender %></p>
-              <p><strong>Race:</strong> <%= hero.appearance.race || 'Unknown' %></p>
-              <p><strong>Height:</strong> <%= hero.appearance.height.join(', ') %></p>
-              <p><strong>Weight:</strong> <%= hero.appearance.weight.join(', ') %></p>
-              <p><strong>Eye Color:</strong> <%= hero.appearance.eyeColor || 'Unknown' %></p>
-              <p><strong>Hair Color:</strong> <%= hero.appearance.hairColor || 'Unknown' %></p>
-              <h3>Group Afiliation</h3>
-              <p> <%= hero.connections.groupAffiliation || 'None' %></p>
-          </div>
-        </div>
-      </div>
+
+        <h3>Physical Characteristics</h3>
+        <!-- Género, raza, altura, peso -->
+        <p><strong>Gender:</strong> <%= hero.appearance.gender %></p>
+        <p><strong>Race:</strong> <%= hero.appearance.race || 'Unknown' %></p>
+        <p><strong>Height:</strong> <%= hero.appearance.height.join(', ') %></p>
+        <p><strong>Weight:</strong> <%= hero.appearance.weight.join(', ') %></p>
+
+        <!-- Color de ojos y pelo -->
+        <p><strong>Eye Color:</strong> <%= hero.appearance.eyeColor || 'Unknown' %></p>
+        <p><strong>Hair Color:</strong> <%= hero.appearance.hairColor || 'Unknown' %></p>
+
+        <!-- Afiliación a un grupo -->
+        <h3>Group Afiliation</h3>
+        <p> <%= hero.connections.groupAffiliation || 'None' %></p>
     </div>
 
 

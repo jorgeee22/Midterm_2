@@ -1,11 +1,19 @@
 body {
-    font-family: 'Comic Neue', cursive;
-    background-image: url('/img/fondohero.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+  
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    background-image: url('/img/fondo2.webp'); 
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat; 
+      height: 100vh; 
+  }
+  .bangers-regular {
+    font-family: "Bangers", system-ui;
+    font-weight: 500;
+    font-style: normal;
+    
   }
 
 
@@ -30,12 +38,12 @@ body {
   
   .catalog-link {
     font-size: 1.5rem; 
-    letter-spacing: 0.2rem; 
+    letter-spacing: 0.2rem;
     font-weight: bold;
   }
 
   .site-title {
-    font-size: 2rem; 
+    font-size: 2rem;
     text-align: center;
     font-weight: bold;
     letter-spacing: 0.3rem; 

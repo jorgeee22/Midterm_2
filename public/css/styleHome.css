@@ -1,31 +1,37 @@
 body {
       margin: 0;
       padding: 0;
-      background-image: url('/img/fondo.jpg'); /* Ruta de la imagen local */
-      background-size: cover; /* La imagen cubre todo el fondo proporcionalmente */
-      background-position: center; /* Centra la imagen en la ventana */
-      background-repeat: no-repeat; /* Evita que la imagen se repita */
-      height: 100vh; /* Ajusta la altura al 100% de la ventana */
+      background-image: url('/img/fondo.jpg'); 
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat; 
+      height: 100vh; 
+      
   }
-
+  .bangers-regular {
+    font-family: "Bangers", system-ui;
+    font-weight: 500;
+    font-style: normal;
+    
+  }
   .full-height-container {
-    min-height: 100vh; /* Hace que el contenedor abarque al menos el 100% del viewport */
+    min-height: 100vh; 
     display: flex;
-    justify-content: center; /* Centra horizontalmente el contenido si lo necesitas */
+    justify-content: center; 
     
   }
 
   .catalog-link {
-    font-size: 1.5rem; /* Tamaño de letra más grande */
-    letter-spacing: 0.2rem; /* Espaciado extendido entre letras */
+    font-size: 1.5rem; 
+    letter-spacing: 0.2rem; 
     font-weight: bold;
   }
 
   .site-title {
-    font-size: 2rem; /* Tamaño de letra más grande para Superheroe-Pedia */
+    font-size: 2rem; 
     text-align: center;
     font-weight: bold;
-    letter-spacing: 0.3rem; /* Espaciado adicional entre letras */
+    letter-spacing: 0.3rem; 
   }
   .hero-banner {
     
@@ -64,4 +70,20 @@ body {
     border: 2px solid #ccc;
     margin: 10px;
     display: inline-block;
+  }
+
+  .favorite-heroes .card {
+    width: 150px; 
+    margin: 0 auto; 
+  }
+  .favorite-heroes img {
+    height: 150px;
+    object-fit: cover; 
+  }
+  .favorite-heroes {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    margin-top: 30px;
+
   }
