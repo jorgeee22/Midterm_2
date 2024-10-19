@@ -9,6 +9,13 @@ body {
       height: 100vh; /* Ajusta la altura al 100% de la ventana */
   }
 
+  .full-height-container {
+    min-height: 100vh; /* Hace que el contenedor abarque al menos el 100% del viewport */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido si lo necesitas */
+    
+  }
+
   .catalog-link {
     font-size: 1.5rem; /* Tamaño de letra más grande */
     letter-spacing: 0.2rem; /* Espaciado extendido entre letras */

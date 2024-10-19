@@ -1,22 +1,10 @@
 body {
-    background-color: #f8f9fa;
+    background-color: lightslategray;
       margin: 0;
       padding: 0;
       height: 100vh; /* Ajusta la altura al 100% de la ventana */
   }
 
-  .catalog-link {
-    font-size: 1.5rem; /* Tamaño de letra más grande */
-    letter-spacing: 0.2rem; /* Espaciado extendido entre letras */
-    font-weight: bold;
-  }
-
-  .site-title {
-    font-size: 2rem; /* Tamaño de letra más grande para Superheroe-Pedia */
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 0.3rem; /* Espaciado adicional entre letras */
-  }
   .hero-banner {
     
     padding: 50px 0;
@@ -54,4 +42,23 @@ body {
     border: 2px solid #ccc;
     margin: 10px;
     display: inline-block;
+  }
+  .catalog-link {
+    font-size: 2rem; /* Tamaño de letra más grande */
+    letter-spacing: 0.2rem; /* Espaciado entre letras */
+    font-weight: bold;
+    color: white; /* Color blanco para mejor visibilidad */
+  }
+
+  .site-title {
+    font-size: 2.5rem; /* Tamaño de letra más grande para Superheroe-Pedia */
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.3rem; /* Espaciado extra */
+    color: white; /* Color blanco para resaltar */
+  }
+
+  /* Agrega un cambio de color al pasar el ratón */
+  .nav-link:hover {
+    color: yellow; /* Cambia el color al pasar sobre el enlace */
   }
