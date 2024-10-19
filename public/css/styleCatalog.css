@@ -1,8 +1,8 @@
 body {
   font-family: Arial, sans-serif;
-    background-image: url('/img/fondocatalogo.jpg'); /* Imagen de fondo para toda la página */
-    background-size: cover; /* Cubre toda la página */
-    background-position: center; /* Centra la imagen */
+    background-image: url('/img/fondocatalogo.jpg'); 
+    background-size: cover; 
+    background-position: center;
       margin: 0;
       padding: 0;
       height: 100vh; 
