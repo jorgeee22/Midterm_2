@@ -7,7 +7,7 @@ app.use(express.static('public'));
 
 const URL = 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api';
 
-// Ruta principal
+
 app.get('/catalog', async (req, res) => {
     try {
         const response = await axios.get(`${URL}/all.json`);
@@ -94,22 +94,22 @@ app.get('/previous', async (req, res) => {
   }
 });
 
-// Ruta para ver los detalles de un solo superhéroe
+
 app.get('/hero/:id', async (req, res) => {
     const id = parseInt(req.params.id);
     try {
         const response = await axios.get(`${URL}/all.json`);
         const heroes = response.data;
 
-        // Encuentra el superhéroe correspondiente al ID
+        
         const hero = heroes.find(h => h.id === id);
         
-        // Encuentra el índice del superhéroe actual
+        
         const currentIndex = heroes.findIndex(h => h.id === id);
         
-        // Calcular el índice del siguiente y anterior héroe
-        const nextIndex = (currentIndex + 1) % heroes.length; // Wrap around
-        const prevIndex = (currentIndex - 1 + heroes.length) % heroes.length; // Wrap around
+        
+        const nextIndex = (currentIndex + 1) % heroes.length; 
+        const prevIndex = (currentIndex - 1 + heroes.length) % heroes.length; 
 
         res.render('hero', {
             hero,

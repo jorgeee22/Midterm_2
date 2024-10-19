@@ -2,7 +2,7 @@ body {
     background-color: lightslategray;
       margin: 0;
       padding: 0;
-      height: 100vh; /* Ajusta la altura al 100% de la ventana */
+      height: 100vh; 
   }
   .bangers-regular {
     font-family: "Bangers", system-ui;
@@ -49,21 +49,21 @@ body {
     display: inline-block;
   }
   .catalog-link {
-    font-size: 2rem; /* Tamaño de letra más grande */
-    letter-spacing: 0.2rem; /* Espaciado entre letras */
+    font-size: 2rem; 
+    letter-spacing: 0.2rem; 
     font-weight: bold;
-    color: white; /* Color blanco para mejor visibilidad */
+    color: white; 
   }
 
   .site-title {
-    font-size: 2.5rem; /* Tamaño de letra más grande para Superheroe-Pedia */
+    font-size: 2.5rem; 
     font-weight: bold;
     text-align: center;
-    letter-spacing: 0.3rem; /* Espaciado extra */
-    color: white; /* Color blanco para resaltar */
+    letter-spacing: 0.3rem;
+    color: white; 
   }
 
-  /* Agrega un cambio de color al pasar el ratón */
+ 
   .nav-link:hover {
-    color: yellow; /* Cambia el color al pasar sobre el enlace */
+    color: yellow; 
   }

@@ -24,16 +24,16 @@ body {
   }
   
   .catalog-link {
-    font-size: 1.5rem; /* Tamaño de letra más grande */
-    letter-spacing: 0.2rem; /* Espaciado extendido entre letras */
+    font-size: 1.5rem; 
+    letter-spacing: 0.2rem;
     font-weight: bold;
   }
 
   .site-title {
-    font-size: 2rem; /* Tamaño de letra más grande para Superheroe-Pedia */
+    font-size: 2rem;
     text-align: center;
     font-weight: bold;
-    letter-spacing: 0.3rem; /* Espaciado adicional entre letras */
+    letter-spacing: 0.3rem; 
   }
   .hero-banner {
     
