@@ -4,7 +4,12 @@ body {
       padding: 0;
       height: 100vh; /* Ajusta la altura al 100% de la ventana */
   }
-
+  .bangers-regular {
+    font-family: "Bangers", system-ui;
+    font-weight: 500;
+    font-style: normal;
+    
+  }
   .hero-banner {
     
     padding: 50px 0;

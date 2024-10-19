@@ -7,8 +7,14 @@ body {
       background-position: center; /* Centra la imagen en la ventana */
       background-repeat: no-repeat; /* Evita que la imagen se repita */
       height: 100vh; /* Ajusta la altura al 100% de la ventana */
+      
   }
-
+  .bangers-regular {
+    font-family: "Bangers", system-ui;
+    font-weight: 500;
+    font-style: normal;
+    
+  }
   .full-height-container {
     min-height: 100vh; /* Hace que el contenedor abarque al menos el 100% del viewport */
     display: flex;
@@ -65,4 +71,20 @@ body {
     border: 2px solid #ccc;
     margin: 10px;
     display: inline-block;
+  }
+
+  .favorite-heroes .card {
+    width: 150px; /* Tamaño personalizado para las tarjetas */
+    margin: 0 auto; /* Centrar las tarjetas en su columna */
+  }
+  .favorite-heroes img {
+    height: 150px;
+    object-fit: cover; /* Asegurarse de que la imagen no se deforme */
+  }
+  .favorite-heroes {
+    display: flex;
+    justify-content: center; /* Centrar el contenedor de las tarjetas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-top: 30px;
+
   }

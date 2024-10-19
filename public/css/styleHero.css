@@ -1,8 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
+  
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+  }
+  .bangers-regular {
+    font-family: "Bangers", system-ui;
+    font-weight: 500;
+    font-style: normal;
+    
   }
   .hero-container {
     display: flex;

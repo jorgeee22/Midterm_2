@@ -9,12 +9,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
   integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
   crossorigin="anonymous">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
 <body>
 
    
-  <nav class="navbar navbar-expand-lg bg-info">
+  <nav class="navbar navbar-expand-lg bg-info bangers-regular">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,15 +39,33 @@
     </div>
 </nav>
 
-<div class = "container-sm w-50 bg-light p-3 full-height-container " style="background-color: lightgray;">
+<div class="container w-50 bg-light p-3">
  
-  <form action="/search" method="GET" class="form-inline justify-content-center mb-4">
-    <input type="text" name="name" class="form-control mr-2" placeholder="Search hero..." required>
-    <button type="submit" class="btn btn-warning my-2">Go</button>
-  </form>
 
-   
+  <!-- Barra de búsqueda -->
+  <form action="/search" method="GET" class="form-inline justify-content-center mb-4">
+      <input type="text" name="name" class="form-control mr-2" placeholder="Search hero..." required>
+      <button type="submit" class="btn btn-warning my-2">Go</button>
+  </form>
+  <h3>OUR FAVORITE HEROES</h3>
+
+  <div class="row">
+      <% favoriteHeroes.forEach(hero => { %>
+          <div class="col-md-3 mb-3">
+              <div class="card">
+                  <img src="<%= hero.image %>" alt="<%= hero.name %>" class="card-img-top">
+                  <div class="card-body">
+                      <h5 class="card-title"><%= hero.name %></h5>
+                      <a href="/hero/<%= hero.id %>" class="btn btn-info">See details</a>
+                  </div>
+              </div>
+          </div>
+      <% }) %>
+  </div>
 </div>
+
+
+
   
  
 

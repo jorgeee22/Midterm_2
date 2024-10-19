@@ -35,7 +35,40 @@ app.get('/search', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.render('home');  // Renderiza la vista index.ejs
+  const favoriteHeroes = [
+    {
+        id: 346,
+        name: 'Iron man',
+        image: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/346-iron-man.jpg'
+    },
+    {
+        id: 729,
+        name: 'Yoda',
+        image: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/729-yoda.jpg'
+    },
+    {
+        id: 70,
+        name: 'Batman',
+        image: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/70-batman.jpg'
+    },
+    {
+        id: 579,
+        name: 'Scarlet witch',
+        image: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/579-scarlet-witch.jpg'
+    },
+    {
+        id: 630,
+        name: 'Star Lord',
+        image: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/630-star-lord.jpg'
+    },
+    {
+        id: 418,
+        name: 'Luke Skywalker',
+        image: 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/418-luke-skywalker.jpg'
+    }
+];
+
+res.render('home', { favoriteHeroes });
 });
 
   let currentIndex = 0;
