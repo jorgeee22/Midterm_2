@@ -4,23 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styleHero.css">
+<<<<<<< HEAD
+=======
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+     crossorigin="anonymous">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+>>>>>>> prueba
     <title><%= hero.name %> - Superhero Details</title>
 </head>
 <body>
-    <h1>Superhero Details</h1>
+    <nav class="navbar navbar-expand-lg bg-info bangers-regular">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                
+                <a class="nav-link active catalog-link" href="/catalog">CATALOG</a>
+              </li>
+              <li class="nav-item mx-5">
+               
+                <a class="nav-link active site-title" href="/">S U P E R H E R O E - P E D I A</a>
+              </li>
+            </ul>
+    
+           
+            <form action="/search" method="GET" class="d-flex justify-content-center mb-4 ">
+              <input type="text" name="name" class="form-control me-2" placeholder="Search hero..." required>
+              <button type="submit" class="btn btn-primary my-2">Go</button>
+            </form>
+    </nav>
+
+
+    <h1><%= hero.name%></h1>
 
     <div class="hero-details">
-        <!-- Imagen del personaje -->
+       
         <img src="<%= hero.images.md %>" alt="<%= hero.name %>" class="hero-image">
         
-        <!-- ID -->
+       
         <p><strong>ID:</strong> <%= hero.id %></p>
         
-        <!-- Nombre y nombre completo -->
-        <h2><%= hero.name %></h2>
-        <p><strong>Full Name:</strong> <%= hero.biography.fullName %></p>
-        
-        <!-- Estadísticas de poder -->
+        <h3>Biography</h3>
+     <ul>
+        <li><strong>Full name:</strong> <%= hero.biography.fullName || 'Unknown' %></li>
+        <li><strong>Place of Birth:</strong> <%= hero.biography.placeOfBirth || 'Unknown' %></li>
+       <li><strong>Alias:</strong> <%= hero.biography.aliases.join(', ') || 'No aliases available.' %></li>
+     </ul>
+      
         <h3>Power Stats</h3>
         <ul>
             <li><strong>Intelligence:</strong> <%= hero.powerstats.intelligence %></li>
@@ -31,34 +67,30 @@
             <li><strong>Combat:</strong> <%= hero.powerstats.combat %></li>
         </ul>
 
-        <!-- Lugar de nacimiento -->
-        <p><strong>Place of Birth:</strong> <%= hero.biography.placeOfBirth %></p>
 
-        <!-- Pequeña biografía -->
-        <p><strong>Biography:</strong> <%= hero.biography.fullName ? `Also known as ${hero.biography.fullName}` : 'No biography available.' %></p>
-
-        <!-- Alias -->
-        <p><strong>Aliases:</strong> <%= hero.biography.aliases.join(', ') || 'No aliases available.' %></p>
-
-        <!-- Género, raza, altura, peso -->
+        <h3>Physical Characteristics</h3>
+      
         <p><strong>Gender:</strong> <%= hero.appearance.gender %></p>
         <p><strong>Race:</strong> <%= hero.appearance.race || 'Unknown' %></p>
         <p><strong>Height:</strong> <%= hero.appearance.height.join(', ') %></p>
         <p><strong>Weight:</strong> <%= hero.appearance.weight.join(', ') %></p>
 
-        <!-- Color de ojos y pelo -->
+        
         <p><strong>Eye Color:</strong> <%= hero.appearance.eyeColor || 'Unknown' %></p>
         <p><strong>Hair Color:</strong> <%= hero.appearance.hairColor || 'Unknown' %></p>
 
-        <!-- Afiliación a un grupo -->
-        <p><strong>Group Affiliation:</strong> <%= hero.connections.groupAffiliation || 'None' %></p>
+        
+        <h3>Group Afiliation</h3>
+        <p> <%= hero.connections.groupAffiliation || 'None' %></p>
     </div>
 
     <div class="navigation">
-        <a href="/hero/<%= prevHeroId %>" class="btn btn-secondary">Anterior</a>
-        <a href="/hero/<%= nextHeroId %>" class="btn btn-secondary">Siguiente</a>
+        <a href="/hero/<%= prevHeroId %>" class="btn btn-secondary">Previous Hero</a>
+        <a href="/hero/<%= nextHeroId %>" class="btn btn-secondary">Next Hero</a>
     </div>
 
-    <a href="/" class="btn btn-primary">Volver a la página principal</a> 
+    <a href="/" class="btn btn-primary">Home</a> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
