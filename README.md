@@ -1,1 +1,1 @@
-# Midterm_2
+This project consists on creating a website that displays a superhero encyclopedia. It was a team project and part of the second evaluation of Desarrollo de Aplicaciones Web at Universidad Panamericana. The technologies implemented were HTML, CSS, Bootstrap, Ejs templates, Express, Node.
